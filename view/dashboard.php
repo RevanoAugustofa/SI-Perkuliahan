@@ -58,6 +58,7 @@ $db = new database;
 
         <div class="ml-[15%] p-7">
             <h1 class="text-3xl font-bold mb-2 text-blue-500">Dashboard</h1>
+
             <div class="flex space-x-4">
                 <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
@@ -71,10 +72,11 @@ $db = new database;
                             <i class="ri-book-read-fill text-2xl"></i>
                         </div>
                         <p>Jumlah Matakuliah</p>
-                        <h2 class="card-title text-3xl "><?= $db->getalldata('matkul') ?></h2>
+                        <h2 class="card-title text-3xl font-bold"><?= $db->getalldata('matkul') ?></h2>
                     </div>
                 </div>
-                <div class="card bg-base-100 image-full w-96 shadow-xl">
+
+                <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
                         <img
                             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -85,46 +87,56 @@ $db = new database;
                             <h2 class="card-title">Mahasiswa</h2>
                             <i class="ri-graduation-cap-fill text-2xl"></i>
                         </div>
-
                         <p>Jumlah Mahasiswa</p>
-                        <p class="text-3xl"><?= $db->getalldata('mahasiswa') ?></p>
+                        <p class="text-3xl font-bold"><?= $db->getalldata('mahasiswa') ?></p>
                     </div>
+                </div>
 
-                </div>
-                <div class="card bg-base-100 image-full w-96 shadow-xl">
+                <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
                         <img
                             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                             alt="Shoes" />
                     </figure>
                     <div class="card-body">
-                        <h2 class="card-title">Kelas<i class="ri-team-fill ml-[120px]"></i></h2>
+                        <div class="flex justify-between">
+                            <h2 class="card-title">Kelas</h2>
+                            <i class="ri-team-fill text-2xl"></i>
+                        </div>
                         <p>Jumlah Kelas</p>
-                        <p class="text-3xl"><?= $db->getalldata('kelas') ?></p>
+                        <p class="text-3xl font-bold"><?= $db->getalldata('kelas') ?></p>
                     </div>
                 </div>
-                <div class="card bg-base-100 image-full w-96 shadow-xl">
+
+                <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
                         <img
                             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                             alt="Shoes" />
                     </figure>
                     <div class="card-body">
-                        <h2 class="card-title">Prodi<i class="ri-contacts-book-2-fill "></i></h2>
+                        <div class="flex justify-between">
+                        <h2 class="card-title">Prodi</h2>
+                        <i class="ri-contacts-book-2-fill text-2xl"></i>
+                        </div>
                         <p>Jumlah Prodi</p>
-                        <p class="text-3xl"><?= $db->getalldata('prodi') ?></p>
+                        <p class="text-3xl font-bold"><?= $db->getalldata('prodi') ?></p>
                     </div>
                 </div>
-                <div class="card bg-base-100 image-full w-96 shadow-xl">
+
+                <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
                         <img
                             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
                             alt="Shoes" />
                     </figure>
                     <div class="card-body">
-                        <h2 class="card-title">Dosen<i class="ri-presentation-fill ml-[110px]"></i></h2>
+                        <div class="flex justify-between">
+                        <h2 class="card-title">Dosen</h2>
+                        <i class="ri-presentation-fill text-2xl"></i>
+                        </div>  
                         <p>Jumlah Dosen</p>
-                        <p class="text-3xl"><?= $db->getalldata('dosen') ?></p>
+                        <p class="text-3xl font-bold"><?= $db->getalldata('dosen') ?></p>
                     </div>
                 </div>
 
