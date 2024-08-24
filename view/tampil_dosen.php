@@ -58,7 +58,7 @@
         </div>
 
         <div class="ml-[16%] p-7">
-        <div class="bg-gray-50 rounded-[10px] w-full p-4 shadow-md  items-center">
+        <div class="bg-gray-50  rounded-[10px] w-full p-4 shadow-md  items-center">
         <h1 class="font-bold text-2xl text-sky-600 drop-shadow-md">Dosen</h1>
             <div class="pt-5 pb-5 flex items-center justify-center w-full overflow-x-auto">
                 
