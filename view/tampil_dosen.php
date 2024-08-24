@@ -14,6 +14,9 @@
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
     rel="stylesheet"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
    
    
 </head>
@@ -65,7 +68,7 @@
                 <table class=" border-white pb-auto w-full table table-zebra">
                     <tr class="bg-slate-400 text-white  text-center ">
                         <th>No</th>
-                        <th class="pl-4">Id Dosen</th>
+                        <th class="pl-4">Id Dosen  </th>
                         <th>NIDN</th>
                         <th>NIP</th>
                         <th>Nama</th>
@@ -88,7 +91,7 @@
                         <td><?php echo $row['nama_dsn']?></td>
                         <td><?php echo $row['alamat_dsn']?></td>
                         <td><a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn mr-[-20px]  " href="../form/edit_dosen.php?id=<?php echo $row['id_dosen'];?>&aksi_dsn=edit"><i class="ri-edit-line"></i></a></td>
-                        <td><a class="bg-red-500 text-gray-200 hover:bg-red-700 btn " href="../proses/crud_dosen.php?id=<?php echo $row['id_dosen'];?>&aksi_dsn=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
+                        <td><a class="bg-red-500 text-gray-200 hover:bg-red-700 btn hapus" href="../proses/crud_dosen.php?id=<?php echo $row['id_dosen'];?>&aksi_dsn=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
                     </tr>
 
                     <?php } ?>
@@ -192,6 +195,55 @@
         function Openbar() {
         document.querySelector('.sidebar').classList.toggle('left-[-300px]')
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ambil semua tombol dengan kelas 'hapus'
+            const buttons = document.querySelectorAll('.hapus');
+
+            // Iterasi melalui semua tombol
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    event.preventDefault();
+                    const swalWithBootstrapButtons = Swal.mixin({
+                        customClass: {
+                            confirmButton: 'btn bg-red-200 hover:bg-red-400 ml-2',
+                            cancelButton: 'btn btn-danger'
+                        },
+                        buttonsStyling: false
+                    });
+
+                    swalWithBootstrapButtons.fire({
+                        title: 'Are you sure?',
+                        text: "You won't be able to revert this!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes, delete it!',
+                        cancelButtonText: 'No, cancel!',
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                    swalWithBootstrapButtons.fire({
+                        title: 'Deleted!',
+                        text: 'Your file has been deleted.',
+                        icon: 'success',
+                        timer: 1500,
+                        showConfirmButton: false
+                    }).then(() => {
+                        // Mengalihkan ke URL setelah delay
+                        window.location.href = button.href;
+                    });
+                           
+                        } else if (result.dismiss === Swal.DismissReason.cancel) {
+                            swalWithBootstrapButtons.fire({
+                                title: 'Cancelled',
+                                text: 'Your imaginary file is safe :)',
+                                icon: 'error'
+                            });
+                        }
+                    });
+                });
+            });
+        });
     </script>
 </body>
 </html>
