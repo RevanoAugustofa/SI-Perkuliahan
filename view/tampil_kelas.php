@@ -89,7 +89,7 @@
                                 <td><?php echo $row['thn_akademik'] ?></td>
                                 <td><?php echo $row['nama_prodi'] ?></td>
                                 <td><a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn  mr-[-20px]" href="../form/edit_kelas.php?id=<?php echo $row['id_kls']; ?>&aksi_kls=edit"><i class="ri-edit-line"></i></a></td>
-                                <td><a class="btn hapus" href="../proses/crud_kelas.php?id=<?php echo $row['id_kls']; ?>&aksi_kls=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
+                                <td><a class="btn hapus bg-red-500 text-gray-200 hover:bg-red-700" href="../proses/crud_kelas.php?id=<?php echo $row['id_kls']; ?>&aksi_kls=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
                             </tr>
 
                         <?php } ?>
@@ -220,25 +220,25 @@
                     event.preventDefault();
                     const swalWithBootstrapButtons = Swal.mixin({
                         customClass: {
-                            confirmButton: 'btn btn-success',
-                            cancelButton: 'btn btn-danger'
+                            confirmButton: 'btn bg-red-500 hover:bg-red-700 ml-2 hover:text-white text-white ',
+                            cancelButton: 'btn bg-gray-300 hover:text-white hover:bg-gray-400'
                         },
                         buttonsStyling: false
                     });
 
                     swalWithBootstrapButtons.fire({
-                        title: 'Are you sure?',
-                        text: "You won't be able to revert this!",
+                        title: 'Hapus Data?',
+                        text: "Data yang dihapus tidak dapat dipulihkan!",
                         icon: 'warning',
                         showCancelButton: true,
-                        confirmButtonText: 'Yes, delete it!',
-                        cancelButtonText: 'No, cancel!',
+                        confirmButtonText: 'Hapus!',
+                        cancelButtonText: 'Tidak!',
                         reverseButtons: true
                     }).then((result) => {
                         if (result.isConfirmed) {
                     swalWithBootstrapButtons.fire({
                         title: 'Deleted!',
-                        text: 'Your file has been deleted.',
+                        text: 'Data berhasil dihapus.',
                         icon: 'success',
                         timer: 1500,
                         showConfirmButton: false
@@ -250,7 +250,7 @@
                         } else if (result.dismiss === Swal.DismissReason.cancel) {
                             swalWithBootstrapButtons.fire({
                                 title: 'Cancelled',
-                                text: 'Your imaginary file is safe :)',
+                                text: 'Batal menghapus data :D',
                                 icon: 'error'
                             });
                         }
@@ -258,6 +258,7 @@
                 });
             });
         });
+
     </script>
 </body>
 

@@ -14,6 +14,7 @@
     <link
     href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
     rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    
    
 </head>
@@ -82,7 +83,7 @@
                         <td class="text-center"><?php echo $row['id_prodi'] ?></td>
                         <td><?php echo $row['nama_prodi'] ?></td>
                         <td><a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn  mr-[-20px]" href="../form/edit_prodi.php?id=<?php echo $row['id_prodi'];?>&aksi_prodi=edit"><i class="ri-edit-line"></i></a></td>
-                        <td><a class="bg-red-500 text-gray-200 hover:bg-red-700 btn " href="../proses/crud_prodi.php?id=<?php echo $row['id_prodi'];?>&aksi_prodi=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
+                        <td><a class="bg-red-500 text-gray-200 hover:bg-red-700 btn hapus " href="../proses/crud_prodi.php?id=<?php echo $row['id_prodi'];?>&aksi_prodi=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
                     </tr>
 
                     <?php } ?>
@@ -187,6 +188,56 @@
         function Openbar() {
         document.querySelector('.sidebar').classList.toggle('left-[-300px]')
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ambil semua tombol dengan kelas 'hapus'
+            const buttons = document.querySelectorAll('.hapus');
+
+            // Iterasi melalui semua tombol
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    event.preventDefault();
+                    const swalWithBootstrapButtons = Swal.mixin({
+                        customClass: {
+                            confirmButton: 'btn bg-red-500 hover:bg-red-700 ml-2 hover:text-white text-white ',
+                            cancelButton: 'btn bg-gray-300 hover:text-white hover:bg-gray-400'
+                        },
+                        buttonsStyling: false
+                    });
+
+                    swalWithBootstrapButtons.fire({
+                        title: 'Hapus Data?',
+                        text: "Data yang dihapus tidak dapat dipulihkan!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Hapus!',
+                        cancelButtonText: 'Tidak!',
+                        reverseButtons: true
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                    swalWithBootstrapButtons.fire({
+                        title: 'Deleted!',
+                        text: 'Data berhasil dihapus.',
+                        icon: 'success',
+                        timer: 1500,
+                        showConfirmButton: false
+                    }).then(() => {
+                        // Mengalihkan ke URL setelah delay
+                        window.location.href = button.href;
+                    });
+                           
+                        } else if (result.dismiss === Swal.DismissReason.cancel) {
+                            swalWithBootstrapButtons.fire({
+                                title: 'Cancelled',
+                                text: 'Batal menghapus data :D',
+                                icon: 'error'
+                            });
+                        }
+                    });
+                });
+            });
+        });
+
     </script>
 </body>
 </html>
