@@ -8,16 +8,12 @@ $db = new database;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-        href="../output.css"
-        rel="stylesheet" />
-    <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-        rel="stylesheet" />
-
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="../output.css" rel="stylesheet"/>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="../dist/index.js"></script>
 </head>
 
 <body class="font-sans text-gray-900">
@@ -174,11 +170,51 @@ $db = new database;
         </div>
         </div>
         
-
+        <!-- start index  -->
         <div class="bg-green-500 w-[39%]">
-        <h1>Presentase kehadiran</h1>
+        <div class="max-w-sm w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
+            <div class="flex justify-between">
+                <div>
+                <h5 class="leading-none text-3xl font-bold text-gray-900 dark:text-white pb-2">Presensi</h5>
+                <p class="text-base font-normal text-gray-500 dark:text-gray-400">Minggu ini</p>
+                </div>
+                <div
+                class="flex items-center px-2.5 py-0.5 text-base font-semibold text-green-500 dark:text-green-500 text-center">
+                feb 2024
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13V1m0 0L1 5m4-4 4 4"/>
+                </svg>
+                </div>
+            </div>
+            <div id="data-series-chart"></div>
+            <div class="grid grid-cols-1 items-center border-gray-200 border-t dark:border-gray-700 justify-between mt-5">
+                <div class="flex justify-between items-center pt-5">
+                <!-- Button -->
+                <button
+                    id="dropdownDefaultButton"
+                    data-dropdown-toggle="lastDaysdropdown"
+                    data-dropdown-placement="bottom"
+                    class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 text-center inline-flex items-center dark:hover:text-white"
+                    type="button">
+                    Last 7 days
+                
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                    </svg>
+                </button>
+                <!-- end button  -->
+                <a
+                    href="#"
+                    class="uppercase text-sm font-semibold inline-flex items-center rounded-lg text-blue-600 hover:text-blue-700 dark:hover:text-blue-500  hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700 px-3 py-2">
+                    Laporan Mahasiswa
+                    <svg class="w-2.5 h-2.5 ms-1.5 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                </a>
+                </div>
+            </div>
         </div>
+         <!-- end index  -->
 
+        </div>
         </div>
 
     </div>
@@ -271,6 +307,7 @@ $db = new database;
 
     </div>
     <script>
+        
         function dropDown1() {
             document.querySelector('#submenu1').classList.toggle('hidden')
             document.querySelector('#arrow1').classList.toggle('rotate-0')
@@ -292,21 +329,24 @@ $db = new database;
             document.querySelector('.sidebar').classList.toggle('left-[-300px]')
         }
 
-        // Pastikan SweetAlert2 sudah dimuat
-document.addEventListener('DOMContentLoaded', () => {
-    // Ambil referensi ke tombol
-    const button = document.getElementById('myButton');
+                // Pastikan SweetAlert2 sudah dimuat
+        document.addEventListener('DOMContentLoaded', () => {
+            // Ambil referensi ke tombol
+            const button = document.getElementById('myButton');
 
-    // Tambahkan event listener untuk klik
-    button.addEventListener('click', () => {
-        Swal.fire({
-            title: 'Hello!',
-            text: 'This is a SweetAlert2 dialog.',
-            icon: 'success',
-            confirmButtonText: 'Okay'
+            // Tambahkan event listener untuk klik
+            button.addEventListener('click', () => {
+                Swal.fire({
+                    title: 'Hello!',
+                    text: 'This is a SweetAlert2 dialog.',
+                    icon: 'success',
+                    confirmButtonText: 'Okay'
+                });
+            });
         });
-    });
-});
+
+        
+
 
     </script>
 
