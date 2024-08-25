@@ -31,7 +31,7 @@ if(isset($_POST['submit'])){
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-no-repeat bg-cover bg-center h-screen" style="background-image: url('../bg.png')" >
+<body class="bg-no-repeat bg-cover bg-center h-screen" style="background-image: url('../dist/img/bg.png')" >
     <main  class="flex items-center justify-center min-h-screen flex-col">
         <div>
             <h1 class="mb-6 text-3xl font-extrabold text-slate-700">Sistem Perkuliahan</h1>

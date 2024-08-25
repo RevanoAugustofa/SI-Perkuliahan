@@ -56,15 +56,15 @@ $db = new database;
             </div>
         </div>
 
-        <div class="ml-[15%] p-7">
+        <div class="ml-[15%] p-5">
             <h1 class="text-3xl font-bold mb-2 text-blue-500">Dashboard</h1>
 
             <div class="flex space-x-4">
                 <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
                         <img
-                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                            src="../dist/img/matkul.jpg"
+                            />
                     </figure>
                     <div class="card-body">
                         <div class="flex justify-between">
@@ -78,9 +78,7 @@ $db = new database;
 
                 <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
-                        <img
-                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                        <img src="../dist/img/mhs.jpg"/>
                     </figure>
                     <div class="card-body">
                         <div class="flex justify-between">
@@ -94,9 +92,7 @@ $db = new database;
 
                 <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
-                        <img
-                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                        <img src="../dist/img/kls.jpg" />
                     </figure>
                     <div class="card-body">
                         <div class="flex justify-between">
@@ -110,9 +106,7 @@ $db = new database;
 
                 <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
-                        <img
-                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                        <img src="../dist/img/prodi.jpg" />
                     </figure>
                     <div class="card-body">
                         <div class="flex justify-between">
@@ -126,9 +120,7 @@ $db = new database;
 
                 <div class="card bg-base-100 image-full w-96 shadow-xl hover:scale-95 transition duration-150 ease-out hover:drop-shadow-xl">
                     <figure>
-                        <img
-                            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                            alt="Shoes" />
+                        <img src="../dist/img/dsn.jpg" />
                     </figure>
                     <div class="card-body">
                         <div class="flex justify-between">
@@ -141,6 +133,52 @@ $db = new database;
                 </div>
 
             </div>
+        </div>
+
+        <div class="ml-[15%]  pl-5 pr-5 flex justify-between">
+        <div class="w-[60%]">
+            <div class="bg-white rounded-[10px] w-full p-4 shadow-md  items-center">
+        <h1 class="font-bold text-2xl text-sky-600 drop-shadow-md">Data Mahasiswa</h1>
+            <div class="pt-5 pb-5 flex items-center justify-center w-full overflow-x-auto">
+           
+                <table class=" border-white pb-auto w-full table table-zebra">
+                    <tr class="bg-slate-400 text-white  text-center ">
+                        <th>No</th>
+                        <th class="pl-4">Id Mahasiswa</th>
+                        <th>NPM</th>
+                        <th>Nama</th>
+                        <th>Alamat</th>
+                    </tr>
+                    <?php
+                        
+                        $database = new database();
+                        $no=1;
+                        $data_mahasiswa = $database->tampil_data_mhs();
+                        foreach ($data_mahasiswa as $row) {
+                    ?>
+                    <tr class="pointer hover:bg-gray-200">
+                        <td class="text-center"><?php echo $no++ ?></td>
+
+                        <td class="text-center"><?php echo $row['id_mhs'] ?></td>
+                        <td><?php echo $row['npm'] ?></td>
+                        <td><?php echo $row['nama_mhs']?></td>
+                        <td><?php echo $row['alamat_mhs']?></td>
+                    </tr>
+
+                    <?php } ?>
+                </table>
+
+            </div>
+           
+        
+        </div>
+        </div>
+        
+
+        <div class="bg-green-500 w-[39%]">
+        <h1>Presentase kehadiran</h1>
+        </div>
+
         </div>
 
     </div>
