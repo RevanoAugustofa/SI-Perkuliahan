@@ -64,7 +64,7 @@
            
                 <table class=" border-white pb-auto w-full table table-zebra" >
                 
-                    <tr class="bg-slate-400 text-white  text-center ">
+                    <tr class="bg-slate-400 text-white  text-center text-lg">
                         <th>No</th>
                         <th class="pl-4">Id Mahasiswa</th>
                         <th>NPM</th>
@@ -80,7 +80,7 @@
                         foreach ($data_mahasiswa as $row) {
                     ?>
                   
-                    <tr class="pointer hover:bg-gray-200">
+                    <tr class="pointer hover:bg-gray-200 text-base">
                         <td class="text-center"><?php echo $no++ ?></td>
 
                         <td class="text-center"><?php echo $row['id_mhs'] ?></td>

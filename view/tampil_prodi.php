@@ -59,7 +59,7 @@
             <div class="pt-5 pb-5 flex items-center justify-center w-full overflow-x-auto">
            
                 <table class=" border-white pb-auto w-full table table-zebra">
-                    <tr class="bg-slate-400 text-white  text-center ">
+                    <tr class="bg-slate-400 text-white  text-center text-lg">
                         <th>No</th>
                         <th class="pl-4">Id Prodi</th>
                         <th>Nama Prodi</th>
@@ -72,7 +72,7 @@
                         $data_mk = $database->tampil_data_prodi();
                         foreach ($data_mk as $row) {
                     ?>
-                    <tr class="pointer hover:bg-gray-200">
+                    <tr class="pointer hover:bg-gray-200 text-base">
                         <td class="text-center"><?php echo $no++ ?></td>
 
                         <td class="text-center"><?php echo $row['id_prodi'] ?></td>
