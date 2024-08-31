@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>User</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-    href="../output.css"
-    rel="stylesheet"/>
-   
-   
+    <link href="../output.css" rel="stylesheet"/>
 </head>
 <body class="font-sans text-gray-800">
     <!-- start: sidebar -->
      <div class="fixed left-0 top-0 w-64 h-full bg-gray-900 p-4">
             <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
-            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="" class="w-8 h-8 rounded object-cover">
-            <span class="text-lg font-bold text-white ml-3">Sistem Perkuliahan</span>
+            <img src="../dist/img/si.png" alt="" class="w-10 h-8 rounded object-cover">
+            <span class="text-lg font-bold text-white ml-3">Perkuliahan</span>
             </a>
 
             <!-- start sidenav  -->
@@ -88,7 +84,6 @@
 
         }
         
-
         function Openbar() {
         document.querySelector('.sidebar').classList.toggle('left-[-300px]')
         }

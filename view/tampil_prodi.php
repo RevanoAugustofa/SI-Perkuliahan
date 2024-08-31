@@ -7,13 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prodi</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-    href="../output.css"
-    rel="stylesheet"/>
-
-    <link
-    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-    rel="stylesheet"/>
+    <link href="../output.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    
    
@@ -102,10 +97,10 @@
 
 
     
-    <!-- start: sidebar -->
+    <!-- start sidebar -->
      <div class="fixed left-0 top-0 w-64 h-full bg-gray-900 p-4">
             <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
-            <img src="../si.png" alt="" class="w-10 h-8 rounded object-cover">
+            <img src="../dist/img/si.png" alt="" class="w-10 h-8 rounded object-cover">
             <span class="text-lg font-bold text-white ml-3">Perkuliahan</span>
             </a>
 

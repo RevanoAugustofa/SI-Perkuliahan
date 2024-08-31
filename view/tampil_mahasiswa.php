@@ -111,7 +111,7 @@
     <!-- start: sidebar -->
      <div class="fixed left-0 top-0 w-64 h-full bg-gray-900 p-4">
             <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
-            <img src="../si.png" alt="" class="w-10 h-8 rounded object-cover">
+            <img src="../dist/img/si.png" alt="" class="w-10 h-8 rounded object-cover">
             <span class="text-lg font-bold text-white ml-3">Perkuliahan</span>
             </a>
 
