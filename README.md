@@ -4,5 +4,5 @@ haloo.. bulan lalu saya mendapatkan tugas berupa proyek, dengan dibuatnya SI ini
 Sistem Informasi Perkuliahan adalah proyek yang bertujuan untuk mengelola data perkuliahan di sebuah perguruan tinggi.
 
 #CR
-adapun proyek ini dibuat dengan bantuan teman-teman saya dan beberapa situs library untuk mempermudah membuat proyek ini seperti daisyui dan website komponen grafik.
+adapun proyek ini dibuat dengan bantuan teman-teman saya dan beberapa situs library untuk mempermudah membuat proyek ini seperti daisyui, apexcharts, remix icon, sweetalert dan data table.
 Thanks😁😁.

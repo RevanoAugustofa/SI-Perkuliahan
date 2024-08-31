@@ -142,7 +142,7 @@ $db = new database;
         <h1 class="font-bold text-2xl text-sky-600 drop-shadow-md">Data Mahasiswa</h1>
             <div class="pt-5 pb-5 flex items-center justify-center w-full overflow-x-auto">
            
-                <table class=" border-white pb-auto w-full table table-zebra display" id="myTable">
+                <table class=" border-white pb-auto w-full table table-zebra display">
                     <thead>
                     <tr class="bg-slate-400 text-white  text-center ">
                         <th>No</th>
@@ -318,10 +318,6 @@ $db = new database;
     </div>
     <script src="../dist/index.js"></script>
     <script>
-         $(document).ready( function () {
-            $('#myTable').DataTable();
-            } );
-
         function dropDown1() {
             document.querySelector('#submenu1').classList.toggle('hidden')
             document.querySelector('#arrow1').classList.toggle('rotate-0')
@@ -342,23 +338,6 @@ $db = new database;
         function Openbar() {
             document.querySelector('.sidebar').classList.toggle('left-[-300px]')
         }
-
-                // Pastikan SweetAlert2 sudah dimuat
-        document.addEventListener('DOMContentLoaded', () => {
-            // Ambil referensi ke tombol
-            const button = document.getElementById('myButton');
-
-            // Tambahkan event listener untuk klik
-            button.addEventListener('click', () => {
-                Swal.fire({
-                    title: 'Hello!',
-                    text: 'This is a SweetAlert2 dialog.',
-                    icon: 'success',
-                    confirmButtonText: 'Okay'
-                });
-            });
-        });
-
 
     </script>
 
