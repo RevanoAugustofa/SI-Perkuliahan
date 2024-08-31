@@ -70,7 +70,7 @@
                         <th>Kode Matkul</th>
                         <th>Nama</th>
                         <th>SKS</th>
-                        <th colspan="2">Opsi</th>
+                        <th>Opsi</th>
                     </tr>
                     <?php
                         

@@ -73,7 +73,7 @@
                         <th>NIP</th>
                         <th>Nama</th>
                         <th>Alamat</th>
-                        <th colspan="2">Opsi</th>
+                        <th>Opsi</th>
                     </tr>
                     <?php
                         

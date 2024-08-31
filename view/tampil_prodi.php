@@ -63,7 +63,7 @@
                         <th>No</th>
                         <th class="pl-4">Id Prodi</th>
                         <th>Nama Prodi</th>
-                        <th colspan="2">Opsi</th>
+                        <th>Opsi</th>
                     </tr>
                     <?php
                         

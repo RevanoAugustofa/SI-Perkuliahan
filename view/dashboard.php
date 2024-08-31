@@ -41,9 +41,7 @@ $db = new database;
                         <li class="border-b border-b-gray-400">
                             <a class="justify-between">
                                 <div class="w-10  ">
-                                    <img
-                                        alt="Tailwind CSS Navbar component"
-                                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                    <img alt="Tailwind CSS Navbar component" src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
                                 </div>
                                 Profile
                                 <span class="badge ">hai</span>
@@ -338,7 +336,6 @@ $db = new database;
         function Openbar() {
             document.querySelector('.sidebar').classList.toggle('left-[-300px]')
         }
-
     </script>
 
 </body>
