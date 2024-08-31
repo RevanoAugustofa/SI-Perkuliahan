@@ -54,8 +54,9 @@
                             ?>
                     </select>
         
-                <div class="grid justify-items-end">
-                    <button type="submit" name="submit" class="bg-blue-500  text-white p-3 w-20  boder rounded-md mt-1">Simpan</button>
+                <div class="flex justify-end">
+                    <a href="../view/tampil_kelas.php" class="bg-orange-400  text-white p-3 w-20  boder rounded-md mt-1 text-center">Batal</a>
+                    <button type="submit" name="submit" class="bg-blue-500  text-white p-3 w-20  boder rounded-md mt-1 ml-4">Simpan</button>
                 </div>
 
                 <?php }?>

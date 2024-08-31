@@ -15,8 +15,12 @@
     href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
     rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   
-   
+     <!-- Link ke dTable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <!-- Link ke jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link ke JavaScript DataTables -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
 <body class="font-sans text-gray-900  ">
     
@@ -64,7 +68,8 @@
         <h1 class="font-bold text-2xl text-sky-600 drop-shadow-md">Mahasiswa</h1>
             <div class="pt-5 pb-5 flex items-center justify-center w-full overflow-x-auto">
            
-                <table class=" border-white pb-auto w-full table table-zebra">
+                <table class=" border-white pb-auto w-full table table-zebra display" id="myTable" >
+                    <thead>
                     <tr class="bg-slate-400 text-white  text-center ">
                         <th>No</th>
                         <th class="pl-4">Id Mahasiswa</th>
@@ -73,6 +78,9 @@
                         <th>Alamat</th>
                         <th colspan="2">Opsi</th>
                     </tr>
+                    </thead>
+
+                    <tbody>
                     <?php
                         
                         $database = new database();
@@ -80,6 +88,7 @@
                         $data_mahasiswa = $database->tampil_data_mhs();
                         foreach ($data_mahasiswa as $row) {
                     ?>
+                  
                     <tr class="pointer hover:bg-gray-200">
                         <td class="text-center"><?php echo $no++ ?></td>
 
@@ -91,7 +100,8 @@
                         <td><a class="bg-red-500 text-gray-200 hover:bg-red-700 btn hapus" href="../proses/crud_mahasiswa.php?id=<?php echo $row['id_mhs'];?>&aksi_mhs=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
                     </tr>
 
-                    <?php } ?>
+                    <?php }; ?>
+                    </tbody>
                 </table>
 
             </div>
@@ -173,6 +183,11 @@
 
 
     <script>
+            $(document).ready( function () {
+            $('#myTable').DataTable();
+            } );
+                
+
         function dropDown1() {
         document.querySelector('#submenu1').classList.toggle('hidden')
         document.querySelector('#arrow1').classList.toggle('rotate-0')

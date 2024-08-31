@@ -15,8 +15,12 @@
         href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
         rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
+    <!-- Link ke dTable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <!-- Link ke jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Link ke JavaScript DataTables -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 
 </head>
 
@@ -64,35 +68,41 @@
             <div class="bg-gray-50 rounded-[10px] w-full p-4 shadow-md  items-center">
                 <h1 class="font-bold text-2xl text-sky-600 drop-shadow-md">Kelas</h1>
                 <div class="pt-5 pb-5 flex items-center justify-center w-full overflow-x-auto">
-
-                    <table class=" border-white pb-auto w-full table table-zebra">
-                        <tr class="bg-slate-400 text-white  text-center ">
-                            <th>No</th>
-                            <th class="pl-4">Id Kelas</th>
-                            <th>Nama Kelas</th>
-                            <th>Tahun Akademik</th>
-                            <th>Id Prodi</th>
-                            <th colspan="2">Opsi</th>
-                        </tr>
-                        <?php
-
-                        $database = new database();
-                        $no = 1;
-                        $data_kls = $database->tampil_data_kls();
-                        foreach ($data_kls as $row) {
-                        ?>
-                            <tr class="pointer hover:bg-gray-200">
-                                <td class="text-center"><?php echo $no++ ?></td>
-
-                                <td class="text-center"><?php echo $row['id_kls'] ?></td>
-                                <td><?php echo $row['nama_kls'] ?></td>
-                                <td><?php echo $row['thn_akademik'] ?></td>
-                                <td><?php echo $row['nama_prodi'] ?></td>
-                                <td><a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn  mr-[-20px]" href="../form/edit_kelas.php?id=<?php echo $row['id_kls']; ?>&aksi_kls=edit"><i class="ri-edit-line"></i></a></td>
-                                <td><a class="btn hapus bg-red-500 text-gray-200 hover:bg-red-700" href="../proses/crud_kelas.php?id=<?php echo $row['id_kls']; ?>&aksi_kls=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
+                <table class="w-full table table-zebra display" id="myTable">
+                        <thead>
+                            <tr class="bg-slate-400 text-white  text-center ">
+                                <th>No</th>
+                                <th class="pl-4">Id Kelas</th>
+                                <th>Nama Kelas</th>
+                                <th>Tahun Akademik</th>
+                                <th>Id Prodi</th>
+                                <th>Opsi</th>
                             </tr>
+                        </thead>
+                        <tbody>
 
-                        <?php } ?>
+                            <?php
+
+                            $database = new database();
+                            $no = 1;
+                            $data_kls = $database->tampil_data_kls();
+                            foreach ($data_kls as $row) {
+                            ?>
+                                <tr class="pointer hover:bg-gray-200">
+                                    <td class="text-center"><?php echo $no++ ?></td>
+    
+                                    <td class="text-center"><?php echo $row['id_kls'] ?></td>
+                                    <td><?php echo $row['nama_kls'] ?></td>
+                                    <td><?php echo $row['thn_akademik'] ?></td>
+                                    <td><?php echo $row['nama_prodi'] ?></td>
+                                    <td class="flex gap-8" >
+                                  <a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn  mr-[-20px]" href="../form/edit_kelas.php?id=<?php echo $row['id_kls']; ?>&aksi_kls=edit"><i class="ri-edit-line"></i></a>
+                                  <a class="btn hapus bg-red-500 text-gray-200 hover:bg-red-700" href="../proses/crud_kelas.php?id=<?php echo $row['id_kls']; ?>&aksi_kls=hapus"><i class="ri-delete-bin-7-line"></i></a>
+                                </td>
+                                </tr>
+    
+                            <?php } ?>
+                        </tbody>
                     </table>
 
                 </div>
@@ -188,6 +198,10 @@
 
 
     <script>
+         $(document).ready( function () {
+            $('#myTable').DataTable();
+            } );
+
         function dropDown1() {
             document.querySelector('#submenu1').classList.toggle('hidden')
             document.querySelector('#arrow1').classList.toggle('rotate-0')
