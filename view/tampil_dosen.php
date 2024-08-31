@@ -90,8 +90,10 @@
                         <td><?php echo $row['nip']?></td>
                         <td><?php echo $row['nama_dsn']?></td>
                         <td><?php echo $row['alamat_dsn']?></td>
-                        <td><a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn mr-[-20px]  " href="../form/edit_dosen.php?id=<?php echo $row['id_dosen'];?>&aksi_dsn=edit"><i class="ri-edit-line"></i></a></td>
-                        <td><a class="bg-red-500 text-gray-200 hover:bg-red-700 btn hapus" href="../proses/crud_dosen.php?id=<?php echo $row['id_dosen'];?>&aksi_dsn=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
+                        <td class="text-center">
+                            <a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn" href="../form/edit_dosen.php?id=<?php echo $row['id_dosen'];?>&aksi_dsn=edit"><i class="ri-edit-line"></i></a>
+                            <a class="bg-red-500 text-gray-200 hover:bg-red-700 btn hapus" href="../proses/crud_dosen.php?id=<?php echo $row['id_dosen'];?>&aksi_dsn=hapus"><i class="ri-delete-bin-7-line"></i></a>
+                        </td>
                     </tr>
 
                     <?php } ?>

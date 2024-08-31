@@ -82,8 +82,10 @@
 
                         <td class="text-center"><?php echo $row['id_prodi'] ?></td>
                         <td><?php echo $row['nama_prodi'] ?></td>
-                        <td><a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn  mr-[-20px]" href="../form/edit_prodi.php?id=<?php echo $row['id_prodi'];?>&aksi_prodi=edit"><i class="ri-edit-line"></i></a></td>
-                        <td><a class="bg-red-500 text-gray-200 hover:bg-red-700 btn hapus " href="../proses/crud_prodi.php?id=<?php echo $row['id_prodi'];?>&aksi_prodi=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
+                        <td class="text-center">
+                            <a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn" href="../form/edit_prodi.php?id=<?php echo $row['id_prodi'];?>&aksi_prodi=edit"><i class="ri-edit-line"></i></a>
+                            <a class="bg-red-500 text-gray-200 hover:bg-red-700 btn hapus " href="../proses/crud_prodi.php?id=<?php echo $row['id_prodi'];?>&aksi_prodi=hapus"><i class="ri-delete-bin-7-line"></i></a>
+                        </td>
                     </tr>
 
                     <?php } ?>

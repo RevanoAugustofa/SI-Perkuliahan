@@ -86,8 +86,10 @@
                         <td><?php echo $row['kode_mk'] ?></td>
                         <td><?php echo $row['nama_mk']?></td>
                         <td><?php echo $row['sks']?></td>
-                        <td><a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn  mr-[-20px]" href="../form/edit_matkul.php?id=<?php echo $row['id_mk'];?>&aksi_mk=edit"><i class="ri-edit-line"></i></a></td>
-                        <td><a class="bg-red-500 text-gray-200 hover:bg-red-700 btn hapus" href="../proses/crud_matkul.php?id=<?php echo $row['id_mk'];?>&aksi_mk=hapus"><i class="ri-delete-bin-7-line"></i></a></td>
+                        <td class="text-center">
+                            <a class="bg-blue-600 text-gray-200 hover:bg-blue-800 btn" href="../form/edit_matkul.php?id=<?php echo $row['id_mk'];?>&aksi_mk=edit"><i class="ri-edit-line"></i></a>
+                            <a class="bg-red-500 text-gray-200 hover:bg-red-700 btn hapus" href="../proses/crud_matkul.php?id=<?php echo $row['id_mk'];?>&aksi_mk=hapus"><i class="ri-delete-bin-7-line"></i></a>
+                        </td>
                     </tr>
 
                     <?php } ?>
