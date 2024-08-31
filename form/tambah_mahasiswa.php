@@ -29,8 +29,9 @@
             <textarea name="alamat" id="alamat" required class="mb-4 mt-1 p-2 w-full border border-gray-400 rounded-md"></textarea>
                 
 
-            <div class="grid justify-items-end">
-                <button type="submit" name="submit" class="bg-blue-500  text-white p-3 w-20  boder rounded-md mt-1">Simpan</button>
+            <div class="flex justify-end">
+                <a href="../view/tampil_mahasiswa.php" class="bg-gray-400  text-white p-3 w-20  boder rounded-md mt-1 text-center hover:bg-gray-300">Kembali</a>
+                <button type="submit" name="submit" id="submit"  class="bg-blue-500 rounded-md  text-white p-3 w-20  boder mt-1 ml-4"> Simpan</button>
             </div>
                 
         </form>
