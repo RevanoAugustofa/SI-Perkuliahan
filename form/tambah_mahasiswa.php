@@ -9,10 +9,10 @@
 <body class="bg-zinc-200">
     <main class="flex items-center justify-center min-h-screen flex-col">
    
-    <div class="bg-white p-8 rounded-lg shadow-md w-[40%]">
+    <div class="bg-white p-8 rounded-lg shadow-md lg:w-[40%] md:w-[60%]">
         <form action="../proses/crud_mahasiswa.php?aksi_mhs=tambah" method="post">  
 
-        <h1 class="text-2xl font-bold mb-5 text-center text-green-900 ">Tambah Mahasiswa</h1>
+        <h1 class="lg:text-2xl md:text-xl font-bold mb-5 text-center text-green-900 ">Tambah Mahasiswa</h1>
             <div class="flex mb-2">
                 <label for="npm" class="block text-sm font-medium text-grey-600" >NPM</label>
             </div>

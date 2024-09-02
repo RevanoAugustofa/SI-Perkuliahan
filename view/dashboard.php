@@ -55,7 +55,7 @@ $db = new database;
             </div>
         </div>
 
-        <div class="ml-[15%] p-5">
+        <div class="lg:ml-[15%] p-5 md:ml-0 ms-0">
             <h1 class="text-3xl font-bold mb-2 text-blue-500">Dashboard</h1>
 
             <div class="flex space-x-4">
@@ -140,7 +140,7 @@ $db = new database;
         <h1 class="font-bold text-2xl text-sky-600 drop-shadow-md">Data Mahasiswa</h1>
             <div class="pt-5 pb-5 flex items-center justify-center w-full overflow-x-auto">
            
-                <table class=" border-white pb-auto w-full table table-zebra display">
+                <table class=" border-white pb-auto w-full table table-zebra display" id="myTable">
                     <thead>
                     <tr class="bg-slate-400 text-white  text-center ">
                         <th>No</th>
@@ -232,7 +232,7 @@ $db = new database;
 
 
     <!-- start: sidebar -->
-    <div class="fixed left-0 top-0 w-64 h-full bg-gray-900 p-4">
+    <div class="fixed left-0 top-0 w-64 h-full bg-gray-900 p-4 z-50">
         <a href="#" class="flex items-center pb-4 border-b border-b-gray-800">
         <img src="../dist/img/si.png" alt="" class="w-10 h-8 rounded object-cover">
             <span class="text-lg font-bold text-white ml-3">Perkuliahan</span>
@@ -316,6 +316,11 @@ $db = new database;
     </div>
     <script src="../dist/index.js"></script>
     <script>
+        $(document).ready( function () {
+         $('#myTable').DataTable();
+        } );
+
+
         function dropDown1() {
             document.querySelector('#submenu1').classList.toggle('hidden')
             document.querySelector('#arrow1').classList.toggle('rotate-0')
